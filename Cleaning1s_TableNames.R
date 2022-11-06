@@ -1,7 +1,7 @@
-#ARREGLAR que haya solo 2 estados en attack (0 y 1)
-#transformar los 2 en 1s
-#1 = ataque
-#2 = despierta
+#FIX that there are only 2 states in attack (0 and 1)
+#transform the 2s in 1s
+#1 = attack
+#2 = awake
 
 dat <- read.csv("resultados/single_df.csv",header= TRUE, sep = ",")
 

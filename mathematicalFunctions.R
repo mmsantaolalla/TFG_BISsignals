@@ -16,10 +16,8 @@ read_bis_csv <- function(filename) {
 
 
 interesting_stats <- function(bis) {
-  # TODO: anadir todos los estadisticos que se te ocurran:
-  # percentiles, skewness, kurtosis
   
-  c(mean(bis), sd(bis), getmode(bis), sd(bis)/mean(bis), max(bis), min(bis)) #las operaciones estadisticas escogidas
+  c(mean(bis), sd(bis), getmode(bis), sd(bis)/mean(bis), max(bis), min(bis)) 
 }
 
 getmode <- function(v) {
@@ -32,7 +30,7 @@ all_files <- list.files(pattern = "*.csv")
 
 all_results <- list()
 i <- 1
-window <- 5  # selecciona una por segundo
+window <- 5  # groups every 5 samples
 
 library("zoo")  
 
@@ -52,6 +50,6 @@ for (file in all_files) {
 
 
 single_df <- do.call(rbind, all_results)
-write.csv(single_df, "resultados/single_df.csv") #hubo que generarlo en otra carpeta porque se estaba solapando con las lineas anteriores
+write.csv(single_df, "resultados/single_df.csv")
 
 single_df

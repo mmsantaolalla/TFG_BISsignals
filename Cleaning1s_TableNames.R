@@ -7,13 +7,15 @@ dat <- read.csv("resultados/single_df.csv",header= TRUE, sep = ",")
 
 attack <- dat$attack
 i<-1
-for (at in attack) {
-  at=attack[i]
-  if(at>1){
-    attack[i]<-1
-  }
-  i<-i+1
-}
+
+#for (at in attack) {
+#  at=attack[i]
+#  if(at>1){
+#    attack[i]<-1
+#  }
+#  i<-i+1
+#}
+
 dat$attack <- attack
 #dat %>% rename (V1 = mean)
 #dat %>% rename (V2 = std)
@@ -33,5 +35,7 @@ colnames(dat)[7] <-"min"
 drop <- names(dat) %in% c("X")
 dats<-dat[,!drop]
 
-write.csv(dats, "resultados/final_data.csv")
+dat2 <- dats[dats$attack!= "2",] #eliminate
+
+write.csv(dat2, "resultados/final_data.csv")
 

@@ -35,7 +35,7 @@ colnames(dat)[7] <-"min"
 drop <- names(dat) %in% c("X")
 dats<-dat[,!drop]
 
-dat2 <- dats[dats$attack!= "2",] #eliminate
+dat2 <- dats[dats$attack!= "2",] #eliminate 2s from attack column
 
 write.csv(dat2, "resultados/final_data.csv")
 
